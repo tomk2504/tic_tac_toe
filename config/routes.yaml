@@ -1,0 +1,15 @@
+api_1.0_game_create:
+  path: /api/1.0/game/create
+  methods: [POST]
+  controller: App\Controller\Game\CreateGameController
+
+api_1.0_game_movement:
+  path: /api/1.0/game/move
+  methods: [POST]
+  controller: App\Controller\Game\PlayMoveController
+
+#only to show schema-idea
+#api_1.0_user_create:
+#  path: /api/1.0/user/create
+#  methods: [POST]
+#  controller: App\Controller\User\CreateUserController

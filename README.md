@@ -1,0 +1,55 @@
+
+## TIC TAC TOE
+
+Steps to run the application locally:
+- install composer locally
+- clone project
+  -  git clone https://github.com/tomk2504/tic_tac_toe.git
+- checkout project directory
+- run the Commands below
+  - composer  install
+  - bin/console doctrine:migrations:migrate
+  - bin/console doctrine:migrations:migrate --env=test
+  
+
+### Tests
+
+- in tests/...
+
+### CURL:
+create game:
+
+`curl --location --request POST 'http://127.0.0.1:8000/api/1.0/game/create' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"player_one": "Herman",
+"player_two": "John"
+}
+'`
+
+play move:
+
+`curl --location --request POST 'http://127.0.0.1:8000/api/1.0/game/move' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"player_number": 1,
+"game_id": 1,
+"position": 3
+}
+'`
+
+### Notes
+
+Some notes:
+- run in browser as: adddress/tictactoe
+- the game is split like following 
+  - 7 | 8 | 9  
+  - 4 | 5 | 6
+  - 1 | 2 | 3
+- payload needs only 1 position given value of that postion
+- .env file normal comes in .gitignore but not for presentation mode
+- database is tic_tac_toe (see .env)
+- database for test is tic_tac_toe_test (see .env.test)
+- package Alice is only installed for database reset after test
+  - use ReloadDatabaseTrait;
+- complex tests are under tests/Controller
