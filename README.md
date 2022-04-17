@@ -41,15 +41,15 @@ play move:
 ### Notes
 
 Some notes:
-- run in browser as: adddress/tictactoe
-- the game is split like following 
+- the game matrix is like following: 
   - 7 | 8 | 9  
   - 4 | 5 | 6
   - 1 | 2 | 3
-- payload needs only 1 position given value of that postion
+- payload needs only 1 position given value of that postion (1-9)
 - .env file normal comes in .gitignore but not for presentation mode
 - database is tic_tac_toe (see .env)
 - database for test is tic_tac_toe_test (see .env.test)
-- package Alice is only installed for database reset after test
+- package Alice is only installed for database reset for each test
   - use ReloadDatabaseTrait;
-- complex tests are under tests/Controller
+- tests are under tests/Controller
+- database structure is only basic for presentation-mode
